@@ -1,6 +1,7 @@
 ### What to do with the library
 
-Two main functionalities of node-wot is to creating a WoT Thing and interacting with another WoT Thing. These can be also combined to have a Thing interacts with other Things.
+The two main functionalities of node-wot are creating WoT Things and interacting with other WoT Things.
+This can be combined into a Thing that interacts with other Things.
 
 #### Creating a WoT Thing
 Creating a WoT Thing is called exposing a Thing. Exposing a Thing creates a Thing Description that can be used to by others to interact with this Thing.
@@ -13,12 +14,12 @@ let thing = WoT.produce({
   description: "counter example Thing"
 });
 
-//any other code to develop the Thing
+// any other code to develop the Thing
 
 thing.expose();
 ```
-Here, an object named thing is produced. At this stage, it has only a name and a description for humans to read.
-'thing.expose();' exposes/starts the exposed Thing in order to process external requests. This also creates a Thing Description that describes the interfaces of the thing Thing.
+Here, an object named `thing` is produced. At this stage, it has only a name and a description for humans to read.
+`thing.expose();` exposes/starts the exposed Thing in order to process external requests. This also creates a Thing Description that describes the interfaces of the `counter` thing.
 
 
 * Add a Property definition to the Thing.
@@ -65,7 +66,7 @@ thing.setPropertyReadHandler(
     })
   });
 ```
-You can specify if the Thing needs to something in case of a property read. Here, instead of reading a static value, a random value is generated just for this read case.
+You can specify if the Thing needs to do something in case of a property read. Here, instead of reading a static value, a new random value is generated on every invocation.
 
   * Add a Property write handler
 ```javascript
@@ -78,7 +79,7 @@ thing.setPropertyWriteHandler(
     });
   });
 ```
-You can specify if the Thing needs to something in case of a property write. Here, the value written is used to set the brightness of an LED that requires a specific function (`setBrightness()`)to do that. 
+You can specify if the Thing needs do to something in case of a property write. Here, the value written is used to set the brightness of an LED that requires a specific function (`setBrightness()`) to do that.
 
 * Add an Action definition to the Thing.
 
